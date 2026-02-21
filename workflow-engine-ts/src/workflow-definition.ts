@@ -78,8 +78,8 @@ export const INVOICE_EXPORT_WORKFLOW: WorkflowDefinition = {
       type: "output",
       data: {
         format: "csv",
-        columns: ["Invoice Number", "Amount", "Days Overdue", "Customer Name", "Notified"],
-        rowVariables: ["invoiceNumbers", "invoiceAmounts", "daysOverdues", "customerName", "notified"],
+        columns: ["Invoice Number", "Amount", "Days Overdue"],
+        rowVariables: ["invoiceNumbers", "invoiceAmounts", "daysOverdues"],
         output: "output",
       },
     },

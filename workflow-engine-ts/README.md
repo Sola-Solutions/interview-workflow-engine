@@ -11,7 +11,7 @@ A minimal workflow execution engine for automating web scraping and data process
 
 ```bash
 # Terminal 1: Start infrastructure (from repo root)
-docker-compose up -d
+docker compose up -d
 
 # Terminal 2: Start Temporal worker
 cd workflow-engine-ts

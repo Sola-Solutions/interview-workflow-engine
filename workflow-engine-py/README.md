@@ -11,15 +11,16 @@ A Temporal-based workflow engine for automating web scraping and data processing
 
 1. Start infrastructure (Temporal + InvoiceHub) from the repo root:
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 2. Set up the Python environment:
 ```bash
 cd workflow-engine-py
-python -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
-pip install -e ".[dev]"
+pip install --upgrade pip
+pip install ".[dev]"
 ```
 
 3. Run the tests:

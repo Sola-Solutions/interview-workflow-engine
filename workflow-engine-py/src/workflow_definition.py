@@ -83,8 +83,8 @@ INVOICE_EXPORT_WORKFLOW = WorkflowDefinition(
             id="output-csv",
             data=OutputNodeData(
                 format="csv",
-                columns=["Invoice Number", "Amount", "Days Overdue", "Customer Name", "Notified"],
-                row_variables=["invoiceNumbers", "invoiceAmounts", "daysOverdues", "customerName", "notified"],
+                columns=["Invoice Number", "Amount", "Days Overdue"],
+                row_variables=["invoiceNumbers", "invoiceAmounts", "daysOverdues"],
                 output="output",
             ),
         ),
