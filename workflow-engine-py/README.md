@@ -4,7 +4,7 @@ A Temporal-based workflow engine for automating web scraping and data processing
 
 ## Prerequisites
 
-- [Python 3.12+](https://www.python.org/downloads/) (`brew install python@3.12`)
+- [Python 3.12+](https://www.python.org/downloads/) (`brew install python@3.12`), or [`uv`](https://docs.astral.sh/uv/) (`brew install uv`)
 - [Docker Engine](https://docs.docker.com/engine/install/)
 
 ## Quick Start
@@ -45,6 +45,30 @@ python -m src.run.client --hello
 # Run the invoice export workflow
 python -m src.run.client
 ```
+
+<details>
+<summary><strong>Alternative: using uv</strong></summary>
+
+If you have [`uv`](https://docs.astral.sh/uv/) installed, you can replace steps 2–5 above:
+
+```bash
+cd workflow-engine-py
+
+# Setup
+uv sync --extra dev
+
+# Run tests
+uv run pytest src/test_activities.py -v
+
+# Start the workflow worker (in another terminal)
+uv run python -m src.run.worker
+
+# Run a workflow (in another terminal)
+uv run python -m src.run.client --hello   # verify Temporal setup
+uv run python -m src.run.client           # run the invoice export workflow
+```
+
+</details>
 
 ## What You'll See
 

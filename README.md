@@ -8,7 +8,7 @@ A Temporal-based workflow engine for automating web scraping and data processing
 
 Pick one of:
 - **TypeScript:** [Node.js 20+](https://nodejs.org/en/download)
-- **Python:** [Python 3.12+](https://www.python.org/downloads/) (`brew install python@3.12`)
+- **Python:** [Python 3.12+](https://www.python.org/downloads/) (`brew install python@3.12`), or [`uv`](https://docs.astral.sh/uv/) (`brew install uv`)
 
 ## Quick Start
 
@@ -84,6 +84,37 @@ python -m src.run.client --hello
 
 # Run the invoice export workflow
 python -m src.run.client
+```
+
+</details>
+
+<details>
+<summary><strong>Python (uv)</strong></summary>
+
+#### Set up the Python environment
+
+```bash
+cd workflow-engine-py
+uv sync --extra dev
+```
+
+#### Start the workflow worker (in another terminal)
+
+```bash
+cd workflow-engine-py
+uv run python -m src.run.worker
+```
+
+#### Run a workflow (in another terminal)
+
+```bash
+cd workflow-engine-py
+
+# Verify Temporal setup
+uv run python -m src.run.client --hello
+
+# Run the invoice export workflow
+uv run python -m src.run.client
 ```
 
 </details>
